@@ -36,7 +36,6 @@ function onPlayerJoined(playerId)
                 --         loadESXPlayer(identifier, playerId)
                 --     end
                 -- )
-                TriggerServerEvent("mx-characters:loadCharacters", result)
             end
         )
     else
