@@ -11,6 +11,7 @@ CREATE TABLE `users` (
 	`height` VARCHAR(5) NULL DEFAULT NULL,
 	`inventory` LONGTEXT NULL DEFAULT NULL,
 	`loadout` LONGTEXT NULL DEFAULT NULL,
+	`ssn` VARCHAR(12) NULL DEFAULT NULL,
 	`position` VARCHAR(53) NULL DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
 
 	PRIMARY KEY (`identifier`)

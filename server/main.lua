@@ -22,23 +22,21 @@ function onPlayerJoined(playerId)
             'SELECT * FROM users WHERE identifier like "' .. identifier .. '%"',
             {},
             function(result)
-                if result then
-                    -- loadESXPlayer(identifier, playerId)
-                    -- load player select with characters
-                    TriggerEvent("mx-characters", result)
-                else
-                    -- load player select with no characters
-                    -- MySQL.Async.execute(
-                    --     "INSERT INTO users (identifier) VALUES (@identifier)",
-                    --     {
-                    --         ["@identifier"] = identifier
-                    --     },
-                    --     function(rowsChanged)
-                    --         loadESXPlayer(identifier, playerId)
-                    --     end
-                    -- )
-                    TriggerEvent("mx-characters", re)
-                end
+                -- loadESXPlayer(identifier, playerId)
+                -- load player select with characters
+                TriggerEvent("mx-characters:loadCharacters", result)
+
+                -- load player select with no characters
+                -- MySQL.Async.execute(
+                --     "INSERT INTO users (identifier) VALUES (@identifier)",
+                --     {
+                --         ["@identifier"] = identifier
+                --     },
+                --     function(rowsChanged)
+                --         loadESXPlayer(identifier, playerId)
+                --     end
+                -- )
+                TriggerServerEvent("mx-characters:loadCharacters", result)
             end
         )
     else
