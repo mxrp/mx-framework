@@ -11,7 +11,9 @@ function onPlayerJoined(playerId)
 
     for k, v in ipairs(GetPlayerIdentifiers(playerId)) do
         if string.match(v, "license:") then
+            print("Got identifier")
             identifier = string.sub(v, 9)
+            print(identifier)
             break
         end
     end
@@ -22,6 +24,7 @@ function onPlayerJoined(playerId)
             'SELECT * FROM users WHERE identifier like "' .. identifier .. '%"',
             {},
             function(result)
+                print("triggering mx-character event")
                 -- loadESXPlayer(identifier, playerId)
                 -- load player select with characters
                 TriggerEvent("mx-characters:loadCharacters", result)
