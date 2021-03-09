@@ -1,10 +1,14 @@
 USE `essentialmode`;
 
 CREATE TABLE `users` (
-	`identifier` VARCHAR(40) NOT NULL,
+	`identifier` VARCHAR(48) NOT NULL,
 	`group` VARCHAR(50) NULL DEFAULT 'user',
 	`job` VARCHAR(20) NULL DEFAULT 'unemployed',
 	`job_grade` INT(11) NULL DEFAULT 0,
+	`first_name` VARCHAR(40) NULL DEFAULT NULL,
+	`last_name` VARCHAR(40) NULL DEFAULT NULL,
+	`dob` VARCHAR(10) NULL DEFAULT '01/01/0101',
+	`height` VARCHAR(5) NULL DEFAULT NULL,
 	`inventory` LONGTEXT NULL DEFAULT NULL,
 	`loadout` LONGTEXT NULL DEFAULT NULL,
 	`position` VARCHAR(53) NULL DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
