@@ -27,7 +27,9 @@ function onPlayerJoined(playerId)
                 print("triggering mx-character event")
                 -- loadESXPlayer(identifier, playerId)
                 -- load player select with characters
-                TriggerEvent("loadCharacters", result)
+                print("playerId: " .. playerId)
+                print("identifier: " .. identifier)
+                TriggerEvent("loadCharacters", playerId, result)
 
                 -- load player select with no characters
                 -- MySQL.Async.execute(
